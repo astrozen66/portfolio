@@ -2,14 +2,15 @@
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Home</title><style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:"Inter",sans-serif; background:#f1f5f9; color:#1e293b; font-size:15px; line-height:1.7; }
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
   :root {
     --primary:#0f2a4a; --accent:#2563eb; --accent-light:#dbeafe;
     --text:#1e293b; --muted:#64748b; --bg:#f1f5f9;
     --white:#ffffff; --border:#e2e8f0; --success:#16a34a; --gold:#d97706;
   }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { overflow-x:hidden; }
+  body { font-family:"Inter",sans-serif; background:#f1f5f9; color:#1e293b; font-size:15px; line-height:1.7; overflow-x:hidden; }
   .wrap { max-width:860px; margin:0 auto; padding:2.5rem 1.5rem; }
   .card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:1.5rem; margin-bottom:1.25rem; }
   .section-title { font-size:1.25rem; font-weight:700; color:var(--primary); margin-bottom:0.4rem; }
@@ -44,10 +45,10 @@
   .strength-card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.25rem; border-left:4px solid var(--accent); }
   .strength-card h4 { font-size:0.93rem; font-weight:600; color:var(--primary); margin-bottom:0.3rem; }
   .strength-card p { font-size:0.84rem; color:var(--muted); }
+  .footer { background:#0f2a4a; color:rgba(255,255,255,0.5); text-align:center; padding:1.25rem; font-size:0.8rem; margin-top:2rem; }
   @media(max-width:600px){ .info-grid{grid-template-columns:1fr;} .strength-grid{grid-template-columns:1fr;} }
 </style>
 <style>
-  html,body{width:100%;height:100%;margin:0;padding:0;overflow-x:hidden;}
   .hero{background:linear-gradient(140deg,#0f2a4a 0%,#1a3a6c 60%,#1e4d8c 100%);padding:4rem 2rem;text-align:center;color:#fff;}
   .hero-avatar{width:140px;height:140px;border-radius:50%;border:4px solid rgba(255,255,255,0.5);margin:0 auto 1.5rem;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.35);}
   .hero-avatar img{width:100%;height:100%;object-fit:cover;object-position:top;}
@@ -98,8 +99,19 @@
     <div class="info-item" style="display:flex;gap:0.75rem;align-items:center;"><span style="font-size:1.3rem;">📧</span><div><div class="info-label">DIU Email</div><div class="info-value" style="font-size:0.8rem;font-family:monospace;">al241-35-075@diu.edu.bd</div></div></div>
   </div>
 </div>
-<div style="background:#0f2a4a;color:rgba(255,255,255,0.5);text-align:center;padding:1.25rem;font-size:0.8rem;margin-top:2rem;">
+<div class="footer">
   <strong style="color:#fff;">Abdullah Al Saif</strong> · Software Engineering · DIU · 241-35-075<br>
   <span style="font-size:0.75rem;opacity:0.6;">© 2026 All rights reserved by Saif</span>
 </div>
+<script>
+  // Tell parent iframe to resize to fit this content — removes double scrollbar
+  function sendHeight() {
+    const h = document.documentElement.scrollHeight;
+    window.parent.postMessage({ iframeHeight: h }, "*");
+  }
+  window.addEventListener("load", sendHeight);
+  window.addEventListener("resize", sendHeight);
+  const obs = new MutationObserver(sendHeight);
+  obs.observe(document.body, { childList:true, subtree:true });
+</script>
 </body></html>
