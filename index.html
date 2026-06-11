@@ -9,8 +9,8 @@
     --white:#ffffff; --border:#e2e8f0; --success:#16a34a; --gold:#d97706;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  html, body { overflow:hidden !important; width:100%; }
-  body { font-family:"Inter",sans-serif; background:#f1f5f9; color:#1e293b; font-size:15px; line-height:1.7; }
+  html, body { margin:0; padding:0; overflow:visible; width:100%; }
+  body { font-family:"Inter",sans-serif; background:#f1f5f9; color:#1e293b; font-size:15px; line-height:1.7; overflow-y:visible; }
   .wrap { max-width:860px; margin:0 auto; padding:2.5rem 1.5rem; }
   .card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:1.5rem; margin-bottom:1.25rem; }
   .section-title { font-size:1.25rem; font-weight:700; color:var(--primary); margin-bottom:0.4rem; }
@@ -104,14 +104,13 @@
   <span style="font-size:0.75rem;opacity:0.6;">© 2026 All rights reserved by Saif</span>
 </div>
 <script>
-  // Tell parent iframe to resize to fit this content — removes double scrollbar
   function sendHeight() {
-    const h = document.documentElement.scrollHeight;
+    const h = document.body.scrollHeight;
     window.parent.postMessage({ iframeHeight: h }, "*");
   }
-  window.addEventListener("load", sendHeight);
+  window.addEventListener("load", function() {
+    setTimeout(sendHeight, 300);
+  });
   window.addEventListener("resize", sendHeight);
-  const obs = new MutationObserver(sendHeight);
-  obs.observe(document.body, { childList:true, subtree:true });
 </script>
 </body></html>
