@@ -2,14 +2,15 @@
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Academic Information</title><style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:"Inter",sans-serif; background:#f1f5f9; color:#1e293b; font-size:15px; line-height:1.7; }
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
   :root {
     --primary:#0f2a4a; --accent:#2563eb; --accent-light:#dbeafe;
     --text:#1e293b; --muted:#64748b; --bg:#f1f5f9;
     --white:#ffffff; --border:#e2e8f0; --success:#16a34a; --gold:#d97706;
   }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { overflow-x:hidden; }
+  body { font-family:"Inter",sans-serif; background:#f1f5f9; color:#1e293b; font-size:15px; line-height:1.7; overflow-x:hidden; }
   .wrap { max-width:860px; margin:0 auto; padding:2.5rem 1.5rem; }
   .card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:1.5rem; margin-bottom:1.25rem; }
   .section-title { font-size:1.25rem; font-weight:700; color:var(--primary); margin-bottom:0.4rem; }
@@ -44,11 +45,12 @@
   .strength-card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.25rem; border-left:4px solid var(--accent); }
   .strength-card h4 { font-size:0.93rem; font-weight:600; color:var(--primary); margin-bottom:0.3rem; }
   .strength-card p { font-size:0.84rem; color:var(--muted); }
+  .footer { background:#0f2a4a; color:rgba(255,255,255,0.5); text-align:center; padding:1.25rem; font-size:0.8rem; margin-top:2rem; }
   @media(max-width:600px){ .info-grid{grid-template-columns:1fr;} .strength-grid{grid-template-columns:1fr;} }
 </style>
-<style>html,body{width:100%;margin:0;padding:0;overflow-x:hidden;}
-.page-header{background:linear-gradient(135deg,#0f2a4a 0%,#1a3a5c 100%);padding:2.5rem 2rem;color:#fff;}
-.eyebrow{font-size:0.75rem;opacity:0.55;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:0.4rem;}
+<style>
+  .page-header{background:linear-gradient(135deg,#0f2a4a 0%,#1a3a5c 100%);padding:2.5rem 2rem;color:#fff;}
+  .eyebrow{font-size:0.75rem;opacity:0.55;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:0.4rem;}
 </style>
 </head>
 <body>
@@ -62,27 +64,21 @@
   <div class="divider"></div>
   <div class="card" style="border-left:4px solid #2563eb;margin-bottom:2.5rem;">
     <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:flex-start;">
-      <div style="flex:1;">
-        <div style="font-size:1.15rem;font-weight:700;color:#0f2a4a;margin-bottom:0.3rem;">B.Sc. in Software Engineering</div>
-        <div style="font-size:0.85rem;color:#64748b;margin-bottom:0.75rem;">🏫 Daffodil International University · Dhaka, Bangladesh</div>
-        <p style="font-size:0.9rem;color:#1e293b;line-height:1.8;">A four-year undergraduate program covering software design, development, algorithms, database systems, and software project management — preparing students for the global software industry.</p>
-      </div>
-      <div style="text-align:right;flex-shrink:0;">
-        <span style="background:#dbeafe;color:#1d4ed8;padding:0.35rem 1rem;border-radius:20px;font-size:0.83rem;font-weight:600;display:block;margin-bottom:0.5rem;">7th Semester</span>
-        <span style="font-size:0.8rem;color:#64748b;font-family:monospace;">2021 — Present</span>
-      </div>
+      <div style="flex:1;"><div style="font-size:1.15rem;font-weight:700;color:#0f2a4a;margin-bottom:0.3rem;">B.Sc. in Software Engineering</div>
+      <div style="font-size:0.85rem;color:#64748b;margin-bottom:0.75rem;">🏫 Daffodil International University · Dhaka, Bangladesh</div>
+      <p style="font-size:0.9rem;color:#1e293b;line-height:1.8;">A four-year undergraduate program covering software design, development, algorithms, database systems, and software project management.</p></div>
+      <div style="text-align:right;flex-shrink:0;"><span style="background:#dbeafe;color:#1d4ed8;padding:0.35rem 1rem;border-radius:20px;font-size:0.83rem;font-weight:600;display:block;margin-bottom:0.5rem;">7th Semester</span>
+      <span style="font-size:0.8rem;color:#64748b;font-family:monospace;">2021 — Present</span></div>
     </div>
   </div>
-
   <h2 class="section-title">Academic Journey</h2>
   <div class="divider"></div>
   <div class="timeline" style="margin-bottom:2.5rem;">
     <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021 · Year 1</div><div class="tl-title">Enrolled at Daffodil International University</div><div class="tl-desc">Started B.Sc. in Software Engineering. Covered fundamentals: programming logic, mathematics, computer basics, and introduction to CS concepts.</div></div>
     <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2022 · Year 2</div><div class="tl-title">Core Software Engineering Courses</div><div class="tl-desc">Completed Data Structures, OOP with Java, Database Management (MySQL), and Web Technologies including HTML & CSS.</div></div>
     <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023 · Year 3</div><div class="tl-title">Intermediate & Specialized Subjects</div><div class="tl-desc">Studied Python programming, Software Engineering principles, SDLC, System Analysis & Design, Algorithm Design, and Operating Systems.</div></div>
-    <div class="tl-item"><div class="tl-dot now"></div><div class="tl-year">2024 · Year 4 — NOW</div><div class="tl-title">7th Semester · Advanced Level</div><div class="tl-desc">Currently studying advanced topics: Software Architecture, Project Management, Professional Ethics in Computing, and Software Quality Assurance.</div></div>
+    <div class="tl-item"><div class="tl-dot now"></div><div class="tl-year">2024 · Year 4 — NOW</div><div class="tl-title">7th Semester · Advanced Level</div><div class="tl-desc">Currently studying advanced topics: Software Architecture, Project Management, Professional Ethics, and Software Quality Assurance.</div></div>
   </div>
-
   <h2 class="section-title">Key Courses Completed</h2>
   <div class="divider"></div>
   <div class="course-grid" style="margin-bottom:2.5rem;">
@@ -99,19 +95,27 @@
     <div class="course-item"><div class="cdot" style="background:#be123c;"></div><div style="font-size:0.85rem;font-weight:500;">Computer Networks</div></div>
     <div class="course-item"><div class="cdot" style="background:#be123c;"></div><div style="font-size:0.85rem;font-weight:500;">Software Architecture</div></div>
   </div>
-
   <h2 class="section-title">Projects</h2>
   <div class="divider"></div>
   <div class="card" style="border-left:4px solid #d97706;background:#fffbeb;">
-    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
-      <span style="font-size:1.5rem;">🚧</span>
-      <div><div style="font-weight:700;color:#92400e;">Projects In Progress</div><div style="font-size:0.84rem;color:#a16207;">Upcoming in 8th Semester Coursework</div></div>
-    </div>
-    <p style="font-size:0.875rem;color:#a16207;">I am currently preparing for project-based coursework in my final semester. Planned projects will involve applying Python, Java, and MySQL to build real-world software systems covering the complete SDLC. This section will be updated with completed works.</p>
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;"><span style="font-size:1.5rem;">🚧</span>
+    <div><div style="font-weight:700;color:#92400e;">Projects In Progress</div><div style="font-size:0.84rem;color:#a16207;">Upcoming in 8th Semester Coursework</div></div></div>
+    <p style="font-size:0.875rem;color:#a16207;">I am currently preparing for project-based coursework in my final semester. Planned projects will involve applying Python, Java, and MySQL to build real-world software systems covering the complete SDLC.</p>
   </div>
 </div>
-<div style="background:#0f2a4a;color:rgba(255,255,255,0.5);text-align:center;padding:1.25rem;font-size:0.8rem;margin-top:2rem;">
+<div class="footer">
   <strong style="color:#fff;">Abdullah Al Saif</strong> · Software Engineering · DIU · 241-35-075<br>
   <span style="font-size:0.75rem;opacity:0.6;">© 2026 All rights reserved by Saif</span>
 </div>
+<script>
+  // Tell parent iframe to resize to fit this content — removes double scrollbar
+  function sendHeight() {
+    const h = document.documentElement.scrollHeight;
+    window.parent.postMessage({ iframeHeight: h }, "*");
+  }
+  window.addEventListener("load", sendHeight);
+  window.addEventListener("resize", sendHeight);
+  const obs = new MutationObserver(sendHeight);
+  obs.observe(document.body, { childList:true, subtree:true });
+</script>
 </body></html>
